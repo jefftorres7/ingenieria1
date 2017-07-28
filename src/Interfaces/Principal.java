@@ -7,12 +7,22 @@ package Interfaces;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JRViewer;
 
 /**
  *
@@ -165,7 +175,9 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         menuReportes = new javax.swing.JMenu();
         jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
+        jMenuItem26 = new javax.swing.JMenuItem();
         jMenuItem22 = new javax.swing.JMenuItem();
         jMenuItem23 = new javax.swing.JMenuItem();
         jMenuItem24 = new javax.swing.JMenuItem();
@@ -365,7 +377,7 @@ public class Principal extends javax.swing.JFrame {
         menuReportes.setText("Reportes");
 
         jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarPaciente.png"))); // NOI18N
-        jMenuItem20.setText("Pacientes");
+        jMenuItem20.setText("Pacientes Generales");
         jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem20ActionPerformed(evt);
@@ -373,9 +385,27 @@ public class Principal extends javax.swing.JFrame {
         });
         menuReportes.add(jMenuItem20);
 
+        jMenuItem25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarPaciente.png"))); // NOI18N
+        jMenuItem25.setText("Pacientes por Cédula");
+        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem25ActionPerformed(evt);
+            }
+        });
+        menuReportes.add(jMenuItem25);
+
         jMenuItem21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarMedicos.png"))); // NOI18N
-        jMenuItem21.setText("Médicos");
+        jMenuItem21.setText("Médicos Generales");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
         menuReportes.add(jMenuItem21);
+
+        jMenuItem26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarMedicos.png"))); // NOI18N
+        jMenuItem26.setText("Médicos por Cédula");
+        menuReportes.add(jMenuItem26);
 
         jMenuItem22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Expedientes.png"))); // NOI18N
         jMenuItem22.setText("Expedientes");
@@ -448,6 +478,8 @@ s.show();
 
     private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
         // TODO add your handling code here:
+Clases_Reportes c = new Clases_Reportes();
+c.imprimirReporte("C:\\Users\\micha\\OneDrive\\Documentos\\NetBeansProjects\\ingenieria1\\src\\Reportes\\PacientesGeneral", jdpPrincipal);
     }//GEN-LAST:event_jMenuItem20ActionPerformed
 
     private void menuEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEspecialidadActionPerformed
@@ -536,6 +568,17 @@ v.show();
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
+    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem25ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        // TODO add your handling code here:
+                // TODO add your handling code here:
+Clases_Reportes c = new Clases_Reportes();
+c.imprimirReporte("C:\\Users\\micha\\OneDrive\\Documentos\\NetBeansProjects\\ingenieria1\\src\\Reportes\\MedicosGenerales", jdpPrincipal);
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -587,6 +630,8 @@ v.show();
     private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem25;
+    private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
